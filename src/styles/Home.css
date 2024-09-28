@@ -1,0 +1,121 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+:root {
+    --body-background-color: #ece7e1;
+    --body-color: #1a1818;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+body {
+    background-color: var(--body-background-color);
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+html {
+    font-size: 16px;
+    line-height: 1.5;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style-type: none;
+}
+.Home {
+    padding: 20px;
+}
+.main {
+    display: flex;
+    align-items: flex-end;
+    gap: 50px
+}
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+.icons > a {
+    font-size: 20px;
+    color: var(--body-color);
+    padding: 4px 0;
+}
+.icons::before, .icons::after {
+    content: " ";
+    width: 80px;
+    height: 1px;
+    display: block;
+    background-color: var(--body-color);
+    margin: 38px 0;
+    transform: rotate(90deg);
+}
+.intro {
+    margin-bottom: 30px;
+}
+.intro > h1 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--body-color);
+    letter-spacing: 3px;
+}
+.intro > p {
+    color: var(--body-color);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 23px;
+}
+.hero {
+    /* font-family: "Cormorant Garamond", serif; */
+    font-family: "Playfair Display", serif;
+}
+ul {
+    text-align: left;
+}
+li {
+    line-height: 70px;
+}
+.hero a {
+    font-size: 100px;
+    font-weight: 500;
+    color: var(--body-color);
+}
+@media screen and (max-width: 991px) {
+    .main {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: unset;
+        position: relative;
+    }
+    .icons {
+        flex-direction: row;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: -80px;
+    }
+    .icons::before, .icons::after {
+        transform: rotate(180deg);
+        width: 50px;
+    }
+    .hero a {
+        font-size: 42px;
+    }
+    .intro {
+        text-align: left;
+    }
+    .icons > a {
+        padding: 6px;
+    }
+}
