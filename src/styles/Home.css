@@ -32,13 +32,28 @@ a {
 }
 ul {
     list-style-type: none;
+     text-align: left;
 }
+
 .Home {
     padding: 20px;
+    animation-name: slideDown;
+    animation-duration: 4s;
+    -webkit-animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    position: relative;
+}
+@keyframes slideDown {
+    0% {
+        margin-top: -40px
+    }
+    100% {
+        margin-top: 40px;
+    }
 }
 .main {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     gap: 50px
 }
 .icons {
@@ -47,6 +62,11 @@ ul {
     justify-content: flex-start;
     flex-direction: column;
     margin-bottom: 40px;
+    animation-name: slideDown;
+    animation-duration: 4s;
+    -webkit-animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    position: relative;
 }
 .icons > a {
     font-size: 20px;
@@ -62,27 +82,49 @@ ul {
     margin: 38px 0;
     transform: rotate(90deg);
 }
+@-webkit-keyframes hithere {
+  30% { transform: scale(1.2); }
+  40%, 60% { transform: rotate(-20deg) scale(1.2); }
+  50% { transform: rotate(20deg) scale(1.2); }
+  70% { transform: rotate(0deg) scale(1.2); }
+  100% { transform: scale(1); }
+}
+@keyframes hithere {
+  30% { transform: scale(1.2); }
+  40%, 60% { transform: rotate(-20deg) scale(1.2); }
+  50% { transform: rotate(20deg) scale(1.2); }
+  70% { transform: rotate(0deg) scale(1.2); }
+  100% { transform: scale(1); }
+}
+.icons > a:hover {
+    animation: hithere 1s ease infinite;
+    
+}
 .intro {
     margin-bottom: 30px;
+    animation-name: slideDown;
+    animation-duration: 4s;
+    -webkit-animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    position: relative;
 }
 .intro > h1 {
     font-size: 18px;
     font-weight: 500;
     color: var(--body-color);
     letter-spacing: 3px;
+    text-align: left;
 }
 .intro > p {
     color: var(--body-color);
     font-size: 14px;
     font-weight: 400;
     line-height: 23px;
+    text-align: left;
 }
 .hero {
     /* font-family: "Cormorant Garamond", serif; */
     font-family: "Playfair Display", serif;
-}
-ul {
-    text-align: left;
 }
 li {
     line-height: 70px;
@@ -92,12 +134,39 @@ li {
     font-weight: 500;
     color: var(--body-color);
 }
+@keyframes slideLeft {
+    0% {
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    100% {
+        margin-left: 15px;
+        margin-top: 15px;
+    }
+}
+.hero a:hover {
+    animation: slideLeft 1s ease-in-out;
+}
+.work-intro {
+    text-align: left;
+    width: 30%;
+}
+.work-desc {
+    text-align: left;
+    width: 50%;
+}
+.work-desc > h3 {
+    font-size: 80px;
+    font-weight: 500;
+    color: var(--body-color);
+}
 @media screen and (max-width: 991px) {
     .main {
         flex-direction: column;
         align-items: flex-start;
         justify-content: unset;
         position: relative;
+        gap: 0px;
     }
     .icons {
         flex-direction: row;
@@ -117,5 +186,8 @@ li {
     }
     .icons > a {
         padding: 6px;
+    }
+    li {
+        line-height: unset;
     }
 }

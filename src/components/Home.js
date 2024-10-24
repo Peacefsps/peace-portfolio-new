@@ -1,58 +1,35 @@
 import React from 'react';
 import '../styles/Home.css';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTwitter,
-  faInstagram,
-  faGithub,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+import Icons from '../components/Icons';
+import { Link } from 'react-router-dom';
+
 
 
 export default function Home () {
     return (
       <div className="Home">
         <main className="main">
-          <div className="icons">
-            <a href="#">
-              <FontAwesomeIcon
-                icon={faTwitter}
-              />
-            </a>
-            <a href="#">
-              <FontAwesomeIcon
-                icon={faGithub}
-              />
-            </a>
-            <a href="#">
-              <FontAwesomeIcon
-                icon={faLinkedin}
-              />
-            </a>
-            <a href="#">
-              <FontAwesomeIcon
-                icon={faInstagram}
-              />
-            </a>
-          </div>
+          <Icons />
           <div className="intro">
             <h1>PEACE OYEWOLE</h1>
             <p>Front-End Developer / Blogger</p>
           </div>
-          <ul className="hero">
-            <li>
-              <a href="#">WORK</a>
-            </li>
-            <li>
-              <a href="#">EXPERIENCE</a>
-            </li>
-            <li>
-              <a href="#">CONTACT</a>
-            </li>
-            <li>
-              <a href="#">BLOG</a>
-            </li>
-          </ul>
+          <nav className="hero">
+              <ul>
+                <li>
+                  <Link to="/Work">WORK</Link>
+                </li>
+                <li>
+                  <Link to="/Experience">EXPERIENCE</Link>
+                </li>
+                <li>
+                  <Link to="/Contact">CONTACT</Link>
+                </li>
+                <li>
+                  <a href="https://peaceblogsite.wordpress.com/">BLOG</a>
+                </li>
+              </ul>
+          </nav>
         </main>
         {/* <foooter>
           <small>Built with ReactJS</small>
